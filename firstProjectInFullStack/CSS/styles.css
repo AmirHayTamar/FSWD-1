@@ -1,0 +1,113 @@
+/* ×¢×™×¦×•×‘ ×›×œ×œ×™ */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0px;
+  padding: 0;
+  background: whitesmoke;
+
+  line-height: 1.6;
+  text-align: center;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem 0;
+}
+#a.halls-container{
+  background: #333;
+  color: #fff;
+  padding: 0rem 0;
+}
+
+main {
+  padding-bottom: 105px; /* רווח נוסף בתחתית */
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-top: 50px;
+}
+
+
+/* ×¢×™×¦×•×‘ ×ª×ž×•× ×•×ª ××—×™×“×•×ª */
+.halls-container a, .events-container a {
+text-decoration: none;
+color: #333;
+border: 1px solid #ddd;
+border-radius: 8px;
+overflow:unset;
+display: block;
+width: 250px; /* ×’×•×“×œ ×¨×™×‘×•×¢ */
+height: 250px; /* ×’×•×“×œ ×¨×™×‘×•×¢ */
+transition: transform 0.3s;
+margin-left:15px;
+margin-bottom: 50px;
+}
+
+.halls-container img, .events-container img {
+width: 100%;
+height: 100%;
+aspect-ratio: 1 / 1; /* ×™×—×¡ ×¨×™×‘×•×¢×™ */
+object-fit:; /* ×ž×ª××™× ××ª ×”×ª×ž×•× ×” ×œ×ž×™×›×œ */
+object-position: center; /* ×ž×ž×§×“ ××ª ×”×ª×ž×•× ×” ×‘×ž×¨×›×– */
+display: block;
+}
+
+
+
+/*×¢×™×¦×•×‘ ×ž×›×•×œ×•×ª*/
+.halls-container, .events-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+
+.halls-container a:hover, .events-container a:hover {
+  transform: scale(1.05);
+}
+
+
+
+.halls-container p, .events-container p {
+  margin: 0;
+  padding: 0.5rem;
+  text-align: center;
+  background:antiquewhite;
+  appearance:revert-layer
+}
+
+/* ×¨×¡×¤×•× ×¡×™×‘×™×•×ª */
+@media (max-width: 600px) {
+  .halls-container a, .events-container a {
+    width: 100px;
+  }
+}
+
+/* עיצוב הלוגו */
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* מסיר קו תחתון */
+  color: rgb(217, 221, 231); /* צבע הטקסט */
+}
+
+.logo {
+  width: 50px; /* גודל הלוגו */
+  height: 50px; /* גודל הלוגו */
+  margin-right: 10px; /* ריווח בין הלוגו לכיתוב */
+}
+
+.logo-container span {
+  font-size: 1.2rem; /* גודל הטקסט */
+  font-weight: bold; /* טקסט מודגש */
+}
+
