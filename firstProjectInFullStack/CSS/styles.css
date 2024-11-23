@@ -92,22 +92,39 @@ display: block;
   }
 }
 
-/* עיצוב הלוגו */
-.logo-container {
-  display: flex;
-  align-items: center;
-  text-decoration: none; /* מסיר קו תחתון */
-  color: rgb(217, 221, 231); /* צבע הטקסט */
-}
 
-.logo {
-  width: 50px; /* גודל הלוגו */
-  height: 50px; /* גודל הלוגו */
-  margin-right: 10px; /* ריווח בין הלוגו לכיתוב */
-}
 
-.logo-container span {
+
+
+span {
   font-size: 1.2rem; /* גודל הטקסט */
+  color: #aaa9ae;
   font-weight: bold; /* טקסט מודגש */
+  margin-left: 10px;
 }
+
+/* עיצוב כפתור הבית */
+.home-button {
+  position: fixed; /* מקבע את המיקום למסך */
+  top: 10px; /* מרחק של 10px מהחלק העליון של המסך */
+  left: 10px; /* מרחק של 10px מהחלק השמאלי של המסך */
+  width: 60px; /* גודל הכפתור */
+  height: 60px; /* גודל הכפתור */
+  display: flex; /* מרכז את התוכן בכפתור */
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px; /* מעגל מעט את הפינות */
+  z-index: 1; /* מבטיח שהכפתור יהיה מעל שאר האלמנטים */
+  text-decoration: none; /* מסיר עיצוב קו תחתון אם מדובר בלינק */
+}
+
+/* עיצוב הלוגו בתוך הכפתור */
+.home-button img {
+  width: 100%; /* מתאים את גודל התמונה לכפתור */
+  height: 100%; /* מתאים את גודל התמונה לכפתור */
+  object-fit: cover; /* ממלא את הכפתור בלי לעוות את התמונה */
+  border-radius: 10px; /* תואם את עיגול הפינות של הכפתור */
+  margin-left: 51px;
+}
+
 
