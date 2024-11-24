@@ -55,7 +55,6 @@ margin-bottom: 50px;
 width: 100%;
 height: 100%;
 aspect-ratio: 1 / 1; /* ×™×—×¡ ×¨×™×‘×•×¢×™ */
-object-fit:; /* ×ž×ª××™× ××ª ×”×ª×ž×•× ×” ×œ×ž×™×›×œ */
 object-position: center; /* ×ž×ž×§×“ ××ª ×”×ª×ž×•× ×” ×‘×ž×¨×›×– */
 display: block;
 }
@@ -85,7 +84,7 @@ display: block;
   appearance:revert-layer
 }
 
-/* ×¨×¡×¤×•× ×¡×™×‘×™×•×ª */
+
 @media (max-width: 600px) {
   .halls-container a, .events-container a {
     width: 100px;
