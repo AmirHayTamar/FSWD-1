@@ -2,9 +2,8 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0px;
-  padding: 0;
+  padding-bottom: 75px;
   background: whitesmoke;
-
   line-height: 1.6;
   text-align: center;
 }
@@ -13,15 +12,13 @@ header {
   background: #333;
   color: #fff;
   padding: 1rem 0;
+  z-index: 2;
 }
+
 #a.halls-container{
   background: #333;
   color: #fff;
   padding: 0rem 0;
-}
-
-main {
-  padding-bottom: 105px; /* רווח נוסף בתחתית */
 }
 
 footer {
@@ -44,8 +41,6 @@ border: 1px solid #ddd;
 border-radius: 8px;
 overflow:unset;
 display: block;
-width: 250px; /* ×’×•×“×œ ×¨×™×‘×•×¢ */
-height: 250px; /* ×’×•×“×œ ×¨×™×‘×•×¢ */
 transition: transform 0.3s;
 margin-left:15px;
 margin-bottom: 50px;
@@ -85,11 +80,103 @@ display: block;
 }
 
 
-@media (max-width: 600px) {
+@media (min-width: 400px) {
   .halls-container a, .events-container a {
-    width: 100px;
+    width: 150px;
+    height: 150px;
+    color:#952a2a;
+    grid-template-columns: 1fr; /* כל חלק מקבל 100% מהמסך */
+
   }
 }
+@media (min-width: 685px) {
+  .halls-container a, .events-container a {
+    width: 200px;
+    height: 200px;
+    color:#009688;
+    grid-template-columns: 1fr; /* כל חלק מקבל 100% מהמסך */
+  }
+}
+@media (min-width: 850px) {
+  .halls-container a ,.events-container a{
+    color:#7d0096;
+    width: 250px;
+    height: 250px;
+  }
+}
+
+
+
+/* גריד עיקרי */
+.grid-container {
+  display: grid;
+  grid-template-columns: 4fr 1fr; /* 2 חלקים לתמונות, 1 חלק לטבלה */
+  gap: 1rem; /* רווח בין העמודות */
+  padding: 20px;
+}
+
+/* עיצוב טבלת מחירים */
+.prices-section table {
+  position: static; /* לא משנים את המיקום שלך */
+  margin-top: 100px; /* אם צריך ריווח מהחלק העליון */
+  width: 20%;
+  border-collapse: collapse;
+  text-align: center;
+  background-color: #fff; /* רקע הטבלה */
+  border-radius: 8px; /* פינות מעוגלות */
+  overflow: hidden; /* מסתיר כל מה שמחוץ לגבולות */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* הצללה */
+  font-family: Arial, sans-serif;
+}
+
+.prices-section th, .prices-section td {
+  border: 1px solid #ddd; /* גבול עדין */
+  padding: 15px; /* ריווח בתוך התאים */
+}
+
+.prices-section th {
+  background-color: #4CAF50; /* רקע לכותרת */
+  color: white;
+  font-size: 1rem; /* גודל פונט לכותרת */
+  text-transform: uppercase; /* כותרת באותיות גדולות */
+}
+
+.prices-section td {
+  background-color: #f9f9f9; /* רקע התאים */
+  font-size: 0.95rem; /* גודל טקסט */
+  color: #333;
+}
+
+.prices-section tr:nth-child(even) td {
+  background-color: #f2f2f2; /* פס צבע שונה לכל שורה זוגית */
+}
+
+.prices-section tr:hover td {
+  background-color: #f1f1f1; /* שינוי צבע על מעבר עכבר */
+  transition: background-color 0.3s ease;
+}
+
+.prices-section th, .prices-section td {
+   padding: 10px; /* מצמצם ריווח במסכים קטנים */
+   font-size: 0.85rem;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -113,7 +200,6 @@ span {
   align-items: center;
   justify-content: center;
   border-radius: 10px; /* מעגל מעט את הפינות */
-  z-index: 1; /* מבטיח שהכפתור יהיה מעל שאר האלמנטים */
   text-decoration: none; /* מסיר עיצוב קו תחתון אם מדובר בלינק */
 }
 
