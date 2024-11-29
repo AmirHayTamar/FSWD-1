@@ -1,10 +1,19 @@
-/* סגנונות כלליים */
+/*index Styel*/
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     direction: rtl;
+    background-color: #cdacac;
 }
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    z-index: 2;
+  }
 
 .navbar ul {
     list-style: none;
@@ -43,6 +52,21 @@ main {
 section {
     margin-bottom: 40px;
 }
+
+aside {
+    background-image: url(../images/Logo/com.png);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    width: 14%;
+    float: left; /* ממקם את ה-aside בצד ימין */
+  }
+
+@media (max-width: 1100px) {
+    aside{
+      display:none;
+    }
+  }
 
 /* קרוסלה */
 .carousel {
@@ -101,6 +125,11 @@ section {
     animation-delay: 9s;
 }
 
+#content{
+    padding: 10px;
+}
+
+
 @keyframes dots {
     0%, 75% {
         background-color: #ddd;
@@ -136,10 +165,86 @@ section {
     border: none;
 }
 
+
 footer {
     text-align: center;
     background-color: #333;
     color: white;
     padding: 10px;
     margin-top: 20px;
+    bottom: 0;
 }
+
+
+/**content form Styel**/
+
+.contact-form {
+    width: 100%; /* מגדיר את רוחב הטופס */
+    max-width: 600px; /* רוחב מקסימלי */
+    margin: 0 auto; /* מרכז את הטופס */
+    padding: 20px; /* ריווח פנימי */
+    background-color: #dbd4d4; /* רקע נעים */
+    border-radius: 10px; /* פינות מעוגלות */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* הוספת הצללה */
+  }
+  
+  .contact-form h2 {
+    text-align: center; /* כותרת ממורכזת */
+    margin-bottom: 20px; /* רווח תחתון */
+  }
+  
+  .contact-form label {
+    display: block; /* תצוגה בשורה נפרדת */
+    margin-bottom: 5px; /* ריווח קטן תחת הכותרת */
+    font-weight: bold; /* כותרת בולטת */
+  }
+  
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    width: 95%; /* אלמנטים יתפסו את כל הרוחב */
+    margin-bottom: 15px; /* ריווח בין האלמנטים */
+    padding: 10px; /* ריווח פנימי */
+    border: 1px solid #ccc; /* גבול קל */
+    border-radius: 5px; /* פינות מעוגלות */
+    font-size: 14px; /* גודל טקסט קריא */
+  }
+  
+  .contact-form button {
+    width: 100%; /* כפתור יתפוס את כל הרוחב */
+    padding: 10px;
+    background-color: #333; /* צבע רקע */
+    color: white; /* טקסט לבן */
+    border: none; /* ללא גבול */
+    border-radius: 5px; /* פינות מעוגלות */
+    font-size: 16px; /* גודל טקסט */
+    cursor: pointer; /* סמן יד */
+  }
+  
+  .contact-form button:hover {
+    background-color: #555; /* שינוי צבע בעת מעבר עכבר */
+  }
+  
+
+  /* עיצוב כפתור הבית */
+.home-button {
+    position: fixed; /* מקבע את המיקום למסך */
+    top: 7px; /* מרחק של 10px מהחלק העליון של המסך */
+    width: 60px; /* גודל הכפתור */
+    height: 60px; /* גודל הכפתור */
+    display: flex; /* מרכז את התוכן בכפתור */
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px; /* מעגל מעט את הפינות */
+    text-decoration: none; /* מסיר עיצוב קו תחתון אם מדובר בלינק */
+  }
+  
+  /* עיצוב הלוגו בתוך הכפתור */
+  .home-button img {
+    width: 100%; /* מתאים את גודל התמונה לכפתור */
+    height: 100%; /* מתאים את גודל התמונה לכפתור */
+    object-fit: cover; /* ממלא את הכפתור בלי לעוות את התמונה */
+    border-radius: 10px; /* תואם את עיגול הפינות של הכפתור */
+    margin-right: 10px;
+  }
+  

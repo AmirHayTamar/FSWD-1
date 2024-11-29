@@ -1,11 +1,10 @@
-/* ×¢×™×¦×•×‘ ×›×œ×œ×™ */
 body {
   font-family: Arial, sans-serif;
   margin: 0px;
-  padding-bottom: 75px;
-  background: whitesmoke;
+  background-color: #cdacac;
   line-height: 1.6;
   text-align: center;
+  direction: rtl;
 }
 
 header {
@@ -22,18 +21,15 @@ header {
 }
 
 footer {
-  background: #333;
-  color: #fff;
   text-align: center;
-  padding: 1rem 0;
-  position: fixed;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
   bottom: 0;
-  width: 100%;
-  margin-top: 50px;
 }
 
 
-/* ×¢×™×¦×•×‘ ×ª×ž×•× ×•×ª ××—×™×“×•×ª */
 .halls-container a, .events-container a {
 text-decoration: none;
 color: #333;
@@ -49,14 +45,11 @@ margin-bottom: 50px;
 .halls-container img, .events-container img {
 width: 100%;
 height: 100%;
-aspect-ratio: 1 / 1; /* ×™×—×¡ ×¨×™×‘×•×¢×™ */
-object-position: center; /* ×ž×ž×§×“ ××ª ×”×ª×ž×•× ×” ×‘×ž×¨×›×– */
+aspect-ratio: 1 / 1; 
+object-position: center;
 display: block;
 }
 
-
-
-/*×¢×™×¦×•×‘ ×ž×›×•×œ×•×ª*/
 .halls-container, .events-container {
   display: flex;
   flex-wrap: wrap;
@@ -152,14 +145,10 @@ display: block;
 }
 
 .prices-section tr:hover td {
-  background-color: #f1f1f1; /* שינוי צבע על מעבר עכבר */
+  background-color: #bde7eb; /* שינוי צבע על מעבר עכבר */
   transition: background-color 0.3s ease;
 }
 
-.prices-section th, .prices-section td {
-   padding: 10px; /* מצמצם ריווח במסכים קטנים */
-   font-size: 0.85rem;
-  }
 
 
 
@@ -182,18 +171,11 @@ display: block;
 
 
 
-span {
-  font-size: 1.2rem; /* גודל הטקסט */
-  color: #aaa9ae;
-  font-weight: bold; /* טקסט מודגש */
-  margin-left: 10px;
-}
 
 /* עיצוב כפתור הבית */
 .home-button {
   position: fixed; /* מקבע את המיקום למסך */
-  top: 10px; /* מרחק של 10px מהחלק העליון של המסך */
-  left: 10px; /* מרחק של 10px מהחלק השמאלי של המסך */
+  top: 9px; /* מרחק של 10px מהחלק העליון של המסך */
   width: 60px; /* גודל הכפתור */
   height: 60px; /* גודל הכפתור */
   display: flex; /* מרכז את התוכן בכפתור */
@@ -209,7 +191,30 @@ span {
   height: 100%; /* מתאים את גודל התמונה לכפתור */
   object-fit: cover; /* ממלא את הכפתור בלי לעוות את התמונה */
   border-radius: 10px; /* תואם את עיגול הפינות של הכפתור */
-  margin-left: 51px;
+  margin-right: 10px;
 }
 
 
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 0;
+  background-color: #333;
+}
+
+.navbar ul li {
+  margin-left: 20px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+}
+
+.navbar ul li a:hover {
+  background-color: #555;
+}
