@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../CSS/styles.css">
+  <link rel="stylesheet" href="../CSS/IndexStyles.css">
   <title>דף הבית</title>
 </head>
 <body>
@@ -13,45 +13,83 @@
         <li><a href="index.html">דף הבית</a></li>
         <li><a href="halls.html">אולמות אירועים</a></li>
         <li><a href="events.html">סוגי אירועים</a></li>
-        <li><a href="#contact">צור קשר</a></li>
+        <li><a href="contact.html">צור קשר</a></li>
+        <li><a href="about.html">עלינו</a></li>
       </ul>
     </nav>
   </header>
   <main>
     <section class="about">
-      <h1>ברוכים הבאים לאתר שלנו!</h1>
+      <h1>האירוע שלך מתחיל כאן</h1>
       <p>
         האתר שלנו מתמקד במתן מידע על אולמות אירועים יוקרתיים, סוגי אירועים מגוונים ומידע חיוני ללקוחות שלנו.
         אנו גאים להציע חוויות בלתי נשכחות בכל אירוע, עם צוות מסור ותשומת לב לפרטים הקטנים.
       </p>
     </section>
 
+    <section>
+      <h2>עלינו</h2>
+      <p>
+        ברוכים הבאים לחברת "אמיר ועומר", חברה מובילה ומוערכת בתחום הפקת האירועים. אנו גאים להיות הבחירה הראשונה של מאות לקוחות מרוצים שהפקידו בידינו את יצירת הרגעים המשמעותיים ביותר בחייהם.
+        עם מעל לעשור של ניסיון, אנו משלבים יצירתיות, חדשנות ומקצועיות על מנת להפוך כל אירוע לחלום שמתגשם.
+      </p>
+      <p>
+        הצוות שלנו מונה מומחים בתחומי העיצוב, הלוגיסטיקה והתכנון, וכל אחד מהם מתחייב ללוות אתכם באופן אישי לכל אורך הדרך.
+      </p>
+    </section>
+ 
+    <section>
+      <h2>היתרונות שלנו</h2>
+      <ul>
+        <li><strong>ניסיון:</strong> מעל 10 שנות ניסיון בהפקת אירועים מכל הסוגים.</li>
+        <li><strong>מקצועיות:</strong> צוות מומחים המלווה אתכם בתהליך מלא.</li>
+        <li><strong>מחירים הוגנים:</strong> אנו מתאימים את השירותים שלנו לתקציב שלכם.</li>
+        <li><strong>יחס אישי:</strong> הצוות שלנו מקדיש זמן להבין את הצרכים והשאיפות שלכם.</li>
+        <li><strong>עיצוב ייחודי:</strong> כל אירוע מקבל טאץ' ייחודי.</li>
+        <li><strong>ניהול מלא:</strong> אנו מטפלים בכל היבטי האירוע.</li>
+        <li><strong>חדשנות:</strong> שימוש בטכנולוגיות חדישות.</li>
+      </ul>
+    </section>
+
+    <section class="carousel">
+      <h2>גלריית תמונות</h2>
+      <div class="carousel-container">
+        <div class="carousel-slide">
+          <img src="https://media.easy.co.il/images/UserThumbs/20776299_1572554912432.jpg" alt="אירוע 1">
+          <img src="https://www.allinonepro.co.il/wp-content/uploads/2019/03/d25edfb3-e9e9-44fe-b067-cc8a76af53b2.jpg" alt="אירוע 2">
+          <img src="https://afakabateva.co.il/wp-content/uploads/2019/02/pic7.jpg" alt="אירוע 3">
+          <img src="https://www.eron.co.il/wp-content/uploads/2017/06/%D7%9C%D7%98%D7%9F%D7%95%D7%98%D7%9F%D7%95%D7%98%D7%9F%D7%95%D7%9D.jpg" alt="אירוע 4">
+        </div>
+      </div>
+      <div class="carousel-dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+
+    <section>
+      <h2>תנו לנו להפוך את החלום שלכם למציאות</h2>
+      <p>
+        אל תהססו ליצור קשר ולקבל הצעת מחיר מותאמת אישית.
+      </p>
+      <button onclick="location.href='#contact'">צור קשר</button>
+    </section>
+
     <section class="video">
       <h2>הכירו אותנו בסרטון קצר:</h2>
-      <video controls width="640" height="360">
-        <source src="../videos/about.mp4" type="video/mp4">
-        הדפדפן שלך לא תומך בניגון וידאו.
-      </video>
+      <iframe
+        src="https://www.youtube.com/embed/AkwEniQKUUM"
+        title="סרטון תדמית"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
     </section>
 
-    <section id="contact" class="contact-form">
-      <h2>צור קשר</h2>
-      <form action="submit_form.php" method="post">
-        <label for="name">שם מלא:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="phone">טלפון:</label>
-        <input type="tel" id="phone" name="phone" required>
-
-        <label for="email">אימייל:</label>
-        <input type="email" id="email" name="email" required>
-
-        <button type="submit">שלח</button>
-      </form>
-    </section>
   </main>
   <footer>
-    <p>© כל הזכויות שמורות</p>
+    <p>©'אמיר ועומר' הפקות כל הזכויות שמורות</p>
   </footer>
 </body>
 </html>

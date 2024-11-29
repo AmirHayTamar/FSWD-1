@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/IndexStyles.css">
+  <title>צור קשר</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">דף הבית</a></li>
+        <li><a href="halls.html">אולמות אירועים</a></li>
+        <li><a href="events.html">סוגי אירועים</a></li>
+        <li><a href="contact.html">צור קשר</a></li>
+        <li><a href="about.html">עלינו</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="contact" class="contact-form">
+      <h2>צור קשר</h2>
+      <form action="submit_form.php" method="post">
+        <label for="name">שם מלא:</label>
+        <input type="text" id="name" name="name" required>
+   
+        <label for="phone">טלפון:</label>
+        <input type="tel" id="phone" name="phone" required>
+   
+        <label for="email">אימייל:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="event-type">סוג האירוע:</label>
+        <select id="event-type" name="event_type" required>
+            <option value="" disabled selected>בחר סוג אירוע</option>
+            <option value="wedding">חתונה</option>
+            <option value="bar_mitzvah">בר מצווה</option>
+            <option value="bat_mitzvah">בת מצווה</option>
+            <option value="henna">חינה</option>
+        </select>
+   
+        <label for="participants">מס' משתתפים:</label>
+        <select id="participants" name="participants" required>
+            <option value="" disabled selected>בחר מס' משתתפים</option>
+            <option value="50-100">50-100</option>
+            <option value="100-200">100-200</option>
+            <option value="200-400">200-400</option>
+            <option value="450+">450+</option>
+        </select>
+        <br>  
+        <label for="comments">הערות:</label>
+        <textarea id="comments" name="comments" rows="2" placeholder="כתוב כאן הערות נוספות..."></textarea>
+        <br>  
+        <button type="submit">שלח</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>©'אמיר ועומר' הפקות כל הזכויות שמורות</p>
+  </footer>
+</body>
+</html>
