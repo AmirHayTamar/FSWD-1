@@ -1,4 +1,4 @@
-/*index Styel*/
+/*index Style*/
 
 body {
     font-family: Arial, sans-serif;
@@ -13,7 +13,7 @@ header {
     color: #fff;
     padding: 1rem 0;
     z-index: 2;
-  }
+}
 
 .navbar ul {
     list-style: none;
@@ -39,12 +39,12 @@ header {
     background-color: #555;
 }
 
-/* מעבר חלק */
+/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
 
-/* סגנונות נוספים */
+/* Additional styles */
 main {
     padding: 20px;
 }
@@ -59,104 +59,182 @@ aside {
     margin-top: 20px;
     border-radius: 8px;
     width: 14%;
-    float: left; /* ממקם את ה-aside בצד ימין */
-  }
+    float: left;
+}
 
 @media (max-width: 1100px) {
-    aside{
-      display:none;
-    }
-  }
-
-/* קרוסלה */
-.carousel {
-    text-align: center;
-    margin: 40px 0;
-}
-
-.carousel-container {
-    overflow: hidden;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    position: relative;
-}
-
-.carousel-slide {
-    display: flex;
-    width: calc(100% * 4); /* כמות התמונות */
-    animation: slide 12s infinite;
-}
-
-.carousel-slide img {
-    width: 100%;
-    flex-shrink: 0;
-}
-
-/* נקודות קרוסלה */
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.carousel-dots .dot {
-    width: 15px;
-    height: 15px;
-    margin: 0 5px;
-    background-color: #ddd;
-    border-radius: 50%;
-    animation: dots 12s infinite;
-}
-
-/* אנימציה לנקודות */
-.carousel-dots .dot:nth-child(1) {
-    animation-delay: 0s;
-}
-.carousel-dots .dot:nth-child(2) {
-    animation-delay: 3s;
-}
-.carousel-dots .dot:nth-child(3) {
-    animation-delay: 6s;
-}
-.carousel-dots .dot:nth-child(4) {
-    animation-delay: 9s;
-}
-
-#content{
-    padding: 10px;
-}
-
-
-@keyframes dots {
-    0%, 75% {
-        background-color: #ddd;
-    }
-    25%, 50% {
-        background-color: #333;
+    aside {
+        display: none;
     }
 }
 
-/* אנימציה למעבר תמונות */
-@keyframes slide {
-    0% {
-        transform: translateX(0%);
-    }
-    25% {
-        transform: translateX(-100%);
-    }
-    50% {
-        transform: translateX(-200%);
-    }
-    75% {
-        transform: translateX(-300%);
-    }
-    100% {
-        transform: translateX(0%);
-    }
+
+#gallery #gallery-container{
+  position: relative;
+  width: 100%;
+  height: 0px;
+  padding-bottom: 56.7%; /* 16/9 ratio */
+  background-color: blue;
 }
+#gallery #gallery-container #gallery-content{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  height: 100%;
+  display: flex;
+  
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+#gallery #gallery-container #gallery-content .gallery__item{
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+}
+#gallery #gallery-container #gallery-content .gallery__item img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: white;
+}
+
+.click-zone{
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  z-index: 3;
+}
+.click-zone.click-zone-prev{
+  left: 0px;
+}
+.click-zone.click-zone-next{
+  right: 0px;
+}
+#gallery:not(:hover) .arrow{
+  opacity: 0;
+}
+.arrow{
+  text-align: center;
+  z-index: 3;
+  position: absolute;
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  color: black;
+  opacity: 0.5; 
+  transition: opacity 200ms ease;
+}
+.arrow:hover{
+  opacity: .8;
+}
+.arrow span{
+  position: relative;
+  top: 2px;
+}
+.arrow.arrow-prev{
+  top: 50%;
+  left: 5px;
+}
+.arrow.arrow-next{
+  top: 50%;
+  right: 5px;
+}
+.arrow.arrow-disabled{
+  opacity: 0.1;
+}
+
+#gallery:not(:hover) #gallery-controls{
+  opacity: 0;
+}
+#gallery #gallery-container #gallery-controls {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  z-index: 4;
+  position: absolute;
+  right: 0;
+  bottom: 1em;
+  left: 0;
+  text-align: center;
+}
+#gallery #gallery-container #gallery-controls .controls__dot {
+  width: 0.85em;
+  height: 0.85em;
+  border-radius: 50%;
+  outline: none;
+  background-color: #fff;
+  opacity: .3;
+  cursor: pointer;
+  transition: opacity 200ms ease;
+}
+.controls__dot:not(:first-child) {
+  margin-left: 0.25em;
+}
+#gallery #gallery-container #gallery-controls .controls__dot:hover{
+  opacity: .8;
+}
+
+
+#gallery:not(:hover) #gallery-container #toggleFullscreenVisual{
+  opacity: 0;
+}
+#gallery #gallery-container #toggleFullscreenVisual{
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  
+  cursor: pointer;
+  z-index:4;
+  background-color: white;
+  opacity: .3;
+  transition: opacity 200ms ease;
+} 
+#gallery #gallery-container #toggleFullscreenVisual:hover{
+  opacity: .8;
+}
+#toggleFullscreen{
+  display: none;
+}
+#toggleFullscreen:checked ~ main {
+  height: 100vh;
+  overflow: hidden;
+}
+#toggleFullscreen:checked ~ main #gallery #gallery-container {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  height: 100%;
+  padding-bottom: 0px;
+}
+#toggleFullscreen:checked ~ main #gallery #toggleFullscreenVisual {
+  opacity: .6;
+  background-color: grey;
+  position: fixed;
+}
+#toggleFullscreen:checked ~ main #gallery #gallery-controls {
+  position: fixed;
+}
+#toggleFullscreen:checked ~ main #gallery #gallery-controls .controls__dot {
+  opacity: .6;
+  background-color: grey;
+}
+
+
 
 .video iframe {
     width: 100%;
@@ -164,7 +242,6 @@ aside {
     height: 315px;
     border: none;
 }
-
 
 footer {
     text-align: center;
@@ -175,76 +252,71 @@ footer {
     bottom: 0;
 }
 
-
-/**content form Styel**/
-
-.contact-form {
-    width: 100%; /* מגדיר את רוחב הטופס */
-    max-width: 600px; /* רוחב מקסימלי */
-    margin: 0 auto; /* מרכז את הטופס */
-    padding: 20px; /* ריווח פנימי */
-    background-color: #dbd4d4; /* רקע נעים */
-    border-radius: 10px; /* פינות מעוגלות */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* הוספת הצללה */
-  }
-  
-  .contact-form h2 {
-    text-align: center; /* כותרת ממורכזת */
-    margin-bottom: 20px; /* רווח תחתון */
-  }
-  
-  .contact-form label {
-    display: block; /* תצוגה בשורה נפרדת */
-    margin-bottom: 5px; /* ריווח קטן תחת הכותרת */
-    font-weight: bold; /* כותרת בולטת */
-  }
-  
-  .contact-form input,
-  .contact-form select,
-  .contact-form textarea {
-    width: 95%; /* אלמנטים יתפסו את כל הרוחב */
-    margin-bottom: 15px; /* ריווח בין האלמנטים */
-    padding: 10px; /* ריווח פנימי */
-    border: 1px solid #ccc; /* גבול קל */
-    border-radius: 5px; /* פינות מעוגלות */
-    font-size: 14px; /* גודל טקסט קריא */
-  }
-  
-  .contact-form button {
-    width: 100%; /* כפתור יתפוס את כל הרוחב */
-    padding: 10px;
-    background-color: #333; /* צבע רקע */
-    color: white; /* טקסט לבן */
-    border: none; /* ללא גבול */
-    border-radius: 5px; /* פינות מעוגלות */
-    font-size: 16px; /* גודל טקסט */
-    cursor: pointer; /* סמן יד */
-  }
-  
-  .contact-form button:hover {
-    background-color: #555; /* שינוי צבע בעת מעבר עכבר */
-  }
-  
-
-  /* עיצוב כפתור הבית */
+/* Home button styles */
 .home-button {
-    position: fixed; /* מקבע את המיקום למסך */
-    top: 7px; /* מרחק של 10px מהחלק העליון של המסך */
-    width: 60px; /* גודל הכפתור */
-    height: 60px; /* גודל הכפתור */
-    display: flex; /* מרכז את התוכן בכפתור */
+    position: fixed;
+    top: 7px;
+    width: 60px;
+    height: 60px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px; /* מעגל מעט את הפינות */
-    text-decoration: none; /* מסיר עיצוב קו תחתון אם מדובר בלינק */
-  }
-  
-  /* עיצוב הלוגו בתוך הכפתור */
-  .home-button img {
-    width: 100%; /* מתאים את גודל התמונה לכפתור */
-    height: 100%; /* מתאים את גודל התמונה לכפתור */
-    object-fit: cover; /* ממלא את הכפתור בלי לעוות את התמונה */
-    border-radius: 10px; /* תואם את עיגול הפינות של הכפתור */
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.home-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
     margin-right: 10px;
-  }
-  
+}
+
+/* Contact form styles */
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #dbd4d4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 95%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
