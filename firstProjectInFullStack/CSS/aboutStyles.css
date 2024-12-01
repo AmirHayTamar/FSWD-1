@@ -9,16 +9,19 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #cdacac;
+    background-color: #accccd;
     direction: rtl;
+    margin: 0;
 }
 
-.header {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
+
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    z-index: 2;
+  }
 
 .header h1 {
     font-size: 2.5em;
@@ -67,7 +70,7 @@ footer {
     text-align: center;
     background-color: #333;
     color: white;
-    padding: 10px;
+    padding: 20px;
     margin-top: 20px;
     bottom: 0;
 }
@@ -104,3 +107,28 @@ footer {
 .navbar ul li a:hover {
     background-color: #555;
 }
+
+
+
+  /* עיצוב כפתור הבית */
+  .home-button {
+    position: fixed; /* מקבע את המיקום למסך */
+    top: 7px; /* מרחק של 10px מהחלק העליון של המסך */
+    width: 60px; /* גודל הכפתור */
+    height: 60px; /* גודל הכפתור */
+    display: flex; /* מרכז את התוכן בכפתור */
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px; /* מעגל מעט את הפינות */
+    text-decoration: none; /* מסיר עיצוב קו תחתון אם מדובר בלינק */
+  }
+  
+  /* עיצוב הלוגו בתוך הכפתור */
+  .home-button img {
+    width: 100%; /* מתאים את גודל התמונה לכפתור */
+    height: 100%; /* מתאים את גודל התמונה לכפתור */
+    object-fit: cover; /* ממלא את הכפתור בלי לעוות את התמונה */
+    border-radius: 10px; /* תואם את עיגול הפינות של הכפתור */
+    margin-right: 10px;
+  }
+  
