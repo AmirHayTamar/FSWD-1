@@ -31,92 +31,58 @@
     </section>
 
 
-
-    <div id="gallery"><!-- gallery start -->
-      <div id="gallery-container"><!-- gallery-containet start -->
-        <!-- The checkbox visual. The for prop links it to the inout so when you click on this it check/uncheck the checkbox -->
-        <label id="toggleFullscreenVisual" for="toggleFullscreen"></label>
-        
-        <!-- gallery-content start -->
-        <div id="gallery-content">
-          
-          <div id="pic_1" class="gallery__item">
-            <a href="#" class="click-zone click-zone-prev">
-              <div class="arrow arrow-disabled arrow-prev"><span>&lt;</span></div>
-            </a> 
-            <a href="#pic_2" class="click-zone click-zone-next">
-              <div class="arrow arrow-next"><span>&gt;</span></div>
-            </a>
-            <img src="https://destify.com/wp-content/uploads/2022/07/Marival-Emotions-Garden-800x400.jpg" alt="TODO">
+    <section class="img-section">
+      <div id="slider">
+          <input type="radio" name="slider" id="slide1" checked>
+          <input type="radio" name="slider" id="slide2" checked>
+          <input type="radio" name="slider" id="slide3" checked>
+          <input type="radio" name="slider" id="slide4" checked>
+          <div id="slides">
+             <div id="overflow">
+                <div class="inner">
+                   <div class="slide slide_1">
+                      <div class="slide-content">
+                          <img src="https://www.onlife.co.il/sites/default/files/u13513/timthumb_1.jpg" alt="lion">
+                      </div>
+                   </div>
+                   <div class="slide slide_2">
+                      <div class="slide-content">
+                          <img src="https://www.italianlakeswedding.com/img/ceremony/jewish-wedding-italy_05.jpg" alt="lion2">
+                      </div>
+                   </div>
+                   <div class="slide slide_3">
+                      <div class="slide-content">
+                          <img src="https://destify.com/wp-content/uploads/2022/07/Marival-Emotions-Garden-800x400.jpg" alt="Giraffe">
+                      </div>
+                   </div>
+                   <div class="slide slide_4">
+                      <div class="slide-content">
+                          <img src="https://www.havaveadam.co.il/wp-content/uploads/2024/11/%D7%97%D7%AA%D7%95%D7%A0%D7%AA-%D7%A9%D7%98%D7%97.jpg" alt="parrot">
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div id="controls">
+              <label for="slide1"></label>
+              <label for="slide2"></label>
+              <label for="slide3"></label>
+              <label for="slide4"></label>
           </div>
           
-          <div id="pic_2" class="gallery__item">
-            <a href="#pic_1" class="click-zone click-zone-prev">
-              <div class="arrow arrow-prev"><span>&lt;</span></div>
-            </a> 
-            <a href="#pic_3" class="click-zone click-zone-next">
-              <div class="arrow arrow-next"><span>&gt;</span></div>
-            </a>
-            <img src="https://www.italianlakeswedding.com/img/ceremony/jewish-wedding-italy_05.jpg" alt="TODO">
+          <div id="bullets">
+             <label for="slide1" ></label>
+             <label for="slide2"></label>
+             <label for="slide3"></label>
+             <label for="slide4"></label>
           </div>
-          
-          <div id="pic_3" class="gallery__item">
-            <a href="#pic_2" class="click-zone click-zone-prev">
-              <div class="arrow arrow-prev"><span>&lt;</span></div>
-            </a> 
-            <a href="#pic_4" class="click-zone click-zone-next">
-              <div class="arrow arrow-next"><span>&gt;</span></div>
-            </a>
-            <img src="https://www.havaveadam.co.il/wp-content/uploads/2024/11/%D7%97%D7%AA%D7%95%D7%A0%D7%AA-%D7%A9%D7%98%D7%97.jpg" alt="TODO">
-          </div>
-          
-          <div id="pic_4" class="gallery__item">
-            <a href="#pic_3" class="click-zone click-zone-prev">
-              <div class="arrow arrow-prev"><span>&lt;</span></div>
-            </a> 
-            <a href="#pic_5" class="click-zone click-zone-next">
-              <div class="arrow arrow-next"><span>&gt;</span></div>
-            </a>
-            <img src="https://www.onlife.co.il/sites/default/files/u13513/timthumb_1.jpg" alt="TODO">
-          </div>
-          
-          <div id="pic_5" class="gallery__item">
-            <a href="#pic_4" class="click-zone click-zone-prev">
-              <div class="arrow arrow-prev"><span>&lt;</span></div>
-            </a> 
-            <a href="#" class="click-zone click-zone-next">
-              <div class="arrow arrow-disabled arrow-next"><span>&gt;</span></div>
-            </a>
-            <img src="https://picsum.photos/id/14/960/540" alt="TODO">
-          </div>
-          
-        </div><!-- gallery-content end -->
-        
-        <!-- gallery-controls start -->
-        <div id="gallery-controls">
-          <a href="#pic_1" class="controls__dot">
-            <span class="hidden">pic 1</span>
-          </a>
-          <a href="#pic_2" class="controls__dot">
-            <span class="hidden">pic 2</span>
-          </a>
-          <a href="#pic_3" class="controls__dot">
-            <span class="hidden">pic 3</span>
-          </a>
-          <a href="#pic_4" class="controls__dot">
-            <span class="hidden">pic 4</span>
-          </a>
-          <a href="#pic_5" class="controls__dot">
-            <span class="hidden">pic 5</span>
-          </a>
-        </div><!-- gallery-controls end -->
-      </div><!-- gallery-containet end -->
-    </div><!-- gallery end -->
+       </div>
+    </section>
     
    
     
-
-    <section>
+<div id="contet-main">
+    <section> 
       <h2>עלינו</h2>
       <p>
         ברוכים הבאים לחברת "אמיר ועומר", חברה מובילה ומוערכת בתחום הפקת האירועים. אנו גאים להיות הבחירה הראשונה של מאות לקוחות מרוצים שהפקידו בידינו את יצירת הרגעים המשמעותיים ביותר בחייהם.
@@ -127,7 +93,7 @@
       </p>
     </section>
  
-    <section>
+    <section id="advantage">
       <h2>היתרונות שלנו</h2>
       <ul>
         <li><strong>ניסיון:</strong> מעל 10 שנות ניסיון בהפקת אירועים מכל הסוגים.</li>
@@ -144,23 +110,7 @@
       <h2>פרסומת</h2>
       <p>הצטרף למועדון לקוחות שלנו והזמן עכשיו עם הנחה!</p>
     </aside>
-<!--<section class="carousel">* 
-      <h2>גלריית תמונות</h2>
-      <div class="carousel-container">
-        <div class="carousel-slide">
-          <img src="https://media.easy.co.il/images/UserThumbs/20776299_1572554912432.jpg" alt="אירוע 1">
-          <img src="https://www.allinonepro.co.il/wp-content/uploads/2019/03/d25edfb3-e9e9-44fe-b067-cc8a76af53b2.jpg" alt="אירוע 2">
-          <img src="https://afakabateva.co.il/wp-content/uploads/2019/02/pic7.jpg" alt="אירוע 3">
-          <img src="https://www.eron.co.il/wp-content/uploads/2017/06/%D7%9C%D7%98%D7%9F%D7%95%D7%98%D7%9F%D7%95%D7%98%D7%9F%D7%95%D7%9D.jpg" alt="אירוע 4">
-        </div>
-      </div>
-      <div class="carousel-dots">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-    </section>-->    
+
 
     <section>
       <h2>תנו לנו להפוך את החלום שלכם למציאות</h2>
@@ -179,6 +129,7 @@
         allowfullscreen>
       </iframe>
     </section>
+  </div>
 
   </main>
   <footer>

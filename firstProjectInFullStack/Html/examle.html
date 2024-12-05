@@ -1,95 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../CSS/examle.css">
+  <title>Browser</title>
+</head>
+
 <body>
-    <!-- This input must be outside the wrapper to we can target the carousel from it using css ~ -->
-    <!-- This one is invisible it can be controller from anywhere using label -->
-    <input type="checkbox" id="toggleFullscreen"/>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>אמיר ועומר - הפקת אירועים</title>
-        <link rel="stylesheet" href="../CSS/examle.css">
-    </head>
-    <main>
-      <div id="gallery"><!-- gallery start -->
-        <div id="gallery-container"><!-- gallery-containet start -->
-          <!-- The checkbox visual. The for prop links it to the inout so when you click on this it check/uncheck the checkbox -->
-          <label id="toggleFullscreenVisual" for="toggleFullscreen"></label>
-          
-          <!-- gallery-content start -->
-          <div id="gallery-content">
-            
-            <div id="pic_1" class="gallery__item">
-              <a href="#" class="click-zone click-zone-prev">
-                <div class="arrow arrow-disabled arrow-prev"><span>&lt;</span></div>
-              </a> 
-              <a href="#pic_2" class="click-zone click-zone-next">
-                <div class="arrow arrow-next"><span>&gt;</span></div>
-              </a>
-              <img src="https://destify.com/wp-content/uploads/2022/07/Marival-Emotions-Garden-800x400.jpg" alt="TODO">
-            </div>
-            
-            <div id="pic_2" class="gallery__item">
-              <a href="#pic_1" class="click-zone click-zone-prev">
-                <div class="arrow arrow-prev"><span>&lt;</span></div>
-              </a> 
-              <a href="#pic_3" class="click-zone click-zone-next">
-                <div class="arrow arrow-next"><span>&gt;</span></div>
-              </a>
-              <img src="https://www.italianlakeswedding.com/img/ceremony/jewish-wedding-italy_05.jpg" alt="TODO">
-            </div>
-            
-            <div id="pic_3" class="gallery__item">
-              <a href="#pic_2" class="click-zone click-zone-prev">
-                <div class="arrow arrow-prev"><span>&lt;</span></div>
-              </a> 
-              <a href="#pic_4" class="click-zone click-zone-next">
-                <div class="arrow arrow-next"><span>&gt;</span></div>
-              </a>
-              <img src="https://www.havaveadam.co.il/wp-content/uploads/2024/11/%D7%97%D7%AA%D7%95%D7%A0%D7%AA-%D7%A9%D7%98%D7%97.jpg" alt="TODO">
-            </div>
-            
-            <div id="pic_4" class="gallery__item">
-              <a href="#pic_3" class="click-zone click-zone-prev">
-                <div class="arrow arrow-prev"><span>&lt;</span></div>
-              </a> 
-              <a href="#pic_5" class="click-zone click-zone-next">
-                <div class="arrow arrow-next"><span>&gt;</span></div>
-              </a>
-              <img src="https://www.onlife.co.il/sites/default/files/u13513/timthumb_1.jpg" alt="TODO">
-            </div>
-            
-            <div id="pic_5" class="gallery__item">
-              <a href="#pic_4" class="click-zone click-zone-prev">
-                <div class="arrow arrow-prev"><span>&lt;</span></div>
-              </a> 
-              <a href="#" class="click-zone click-zone-next">
-                <div class="arrow arrow-disabled arrow-next"><span>&gt;</span></div>
-              </a>
-              <img src="https://picsum.photos/id/14/960/540" alt="TODO">
-            </div>
-            
-          </div><!-- gallery-content end -->
-          
-          <!-- gallery-controls start -->
-          <div id="gallery-controls">
-            <a href="#pic_1" class="controls__dot">
-              <span class="hidden">pic 1</span>
-            </a>
-            <a href="#pic_2" class="controls__dot">
-              <span class="hidden">pic 2</span>
-            </a>
-            <a href="#pic_3" class="controls__dot">
-              <span class="hidden">pic 3</span>
-            </a>
-            <a href="#pic_4" class="controls__dot">
-              <span class="hidden">pic 4</span>
-            </a>
-            <a href="#pic_5" class="controls__dot">
-              <span class="hidden">pic 5</span>
-            </a>
-          </div><!-- gallery-controls end -->
-        </div><!-- gallery-containet end -->
-      </div><!-- gallery end -->
+  <section class="img-section">
+      <h1 class="heading">GALLERY</h1>
       
-    
-    </main>
-  </body>
+      <div id="slider">
+          <input type="radio" name="slider" id="slide1" checked>
+          <input type="radio" name="slider" id="slide2" checked>
+          <input type="radio" name="slider" id="slide3" checked>
+          <input type="radio" name="slider" id="slide4" checked>
+          <div id="slides">
+             <div id="overflow">
+                <div class="inner">
+                   <div class="slide slide_1">
+                      <div class="slide-content">
+                          <img src="https://www.onlife.co.il/sites/default/files/u13513/timthumb_1.jpg" alt="lion">
+                      </div>
+                   </div>
+                   <div class="slide slide_2">
+                      <div class="slide-content">
+                          <img src="https://www.italianlakeswedding.com/img/ceremony/jewish-wedding-italy_05.jpg" alt="lion2">
+                      </div>
+                   </div>
+                   <div class="slide slide_3">
+                      <div class="slide-content">
+                          <img src="https://destify.com/wp-content/uploads/2022/07/Marival-Emotions-Garden-800x400.jpg" alt="Giraffe">
+                      </div>
+                   </div>
+                   <div class="slide slide_4">
+                      <div class="slide-content">
+                          <img src="https://www.havaveadam.co.il/wp-content/uploads/2024/11/%D7%97%D7%AA%D7%95%D7%A0%D7%AA-%D7%A9%D7%98%D7%97.jpg" alt="parrot">
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div id="controls">
+              <label for="slide1"></label>
+              <label for="slide2"></label>
+              <label for="slide3"></label>
+              <label for="slide4"></label>
+          </div>
+          
+          <div id="bullets">
+             <label for="slide1" ></label>
+             <label for="slide2"></label>
+             <label for="slide3"></label>
+             <label for="slide4"></label>
+          </div>
+       </div>
+    </section>
+  
+</body>
+
+</html>

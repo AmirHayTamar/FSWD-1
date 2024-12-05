@@ -1,196 +1,171 @@
-#gallery #gallery-container{
-    position: relative;
-    width: 100%;
-    height: 0px;
-    padding-bottom: 56.7%; /* 16/9 ratio */
-    background-color: blue;
-  }
-  #gallery #gallery-container #gallery-content{
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    height: 100%;
-    display: flex;
-    
-    scroll-snap-type: x mandatory;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-  }
-  #gallery #gallery-container #gallery-content .gallery__item{
-    width: 100%;
-    height: 100%;
-    flex-shrink: 0;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    position: relative;
-  }
-  #gallery #gallery-container #gallery-content .gallery__item img{
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    background-color: white;
-  }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: url('https://files.oaiusercontent.com/file-Mfj85bGawqCBWf5GLJc58A?se=2024-11-30T20%3A32%3A00Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D0a520973-aa8b-4cae-a207-a6535df7b36a.webp&sig=CGrGNvmr%2B3VPAbiVHP5GwKbQRDSeeGsOe//df3wzXd4%3D') no-repeat center center fixed; 
+  background-color: rgba(157, 118, 72, 0.541);/*  שכבת צבע כהה חצי שקופה */
+  line-height: 1.6;
+  background-size: cover; /* התמונה תכסה את כל העמוד */
+  text-align: center;
+  background-blend-mode: darken;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* הגובה המינימלי מכסה את כל גובה הדפדפן */
+  margin: 0; /* הסרה של מרווחים חיצוניים */
+  overflow-x: hidden; /* מניעת גלילה אופקית */
+}
+
+
+
+/* Slider Styles */
+.slider {
+  width: 70%;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+#slider input[type=radio] {
+  display: none;
+}
+
+#slider label {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+#overflow {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Slide positioning fixes */
+#slide1:checked ~ #slides .inner {
+  margin-left: 0;
+}
+
+#slide2:checked ~ #slides .inner {
+  margin-left: -100%;
+}
+
+#slide3:checked ~ #slides .inner {
+  margin-left: -200%;
+}
+
+#slide4:checked ~ #slides .inner {
+  margin-left: -300%;
+}
+
+#slides .inner {
+  transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  width: 400%;
+  line-height: 0;
+  height: 400px; /* Increased height for better proportions */
+}
+
+#slides .slide {
+  width: 25%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #fff;
+}
+
+/* Image proportion fixes */
+#slides .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This ensures images maintain aspect ratio */
+  max-width: 300%; /* Prevents image from getting too big */
+  max-height: 100%; /* Prevents image from getting too big */
+  border-radius: 10px;
   
-  .click-zone{
-    position: absolute;
-    width: 20%;
-    height: 100%;
-    z-index: 3;
-  }
-  .click-zone.click-zone-prev{
-    left: 0px;
-  }
-  .click-zone.click-zone-next{
-    right: 0px;
-  }
-  #gallery:not(:hover) .arrow{
-    opacity: 0;
-  }
-  .arrow{
-    text-align: center;
-    z-index: 3;
-    position: absolute;
-    display: block;
-    width: 25px;
-    height: 25px;
-    background-color: white;
-    border-radius: 50%;
-    text-decoration: none;
-    color: black;
-    opacity: 0.5; 
-    transition: opacity 200ms ease;
-  }
-  .arrow:hover{
-    opacity: .8;
-  }
-  .arrow span{
-    position: relative;
-    top: 2px;
-  }
-  .arrow.arrow-prev{
-    top: 50%;
-    left: 5px;
-  }
-  .arrow.arrow-next{
-    top: 50%;
-    right: 5px;
-  }
-  .arrow.arrow-disabled{
-    opacity: 0.1;
-  }
-  
-  #gallery:not(:hover) #gallery-controls{
-    opacity: 0;
-  }
-  #gallery #gallery-container #gallery-controls {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    z-index: 4;
-    position: absolute;
-    right: 0;
-    bottom: 1em;
-    left: 0;
-    text-align: center;
-  }
-  #gallery #gallery-container #gallery-controls .controls__dot {
-    width: 0.85em;
-    height: 0.85em;
-    border-radius: 50%;
-    outline: none;
-    background-color: #fff;
-    opacity: .3;
-    cursor: pointer;
-    transition: opacity 200ms ease;
-  }
-  .controls__dot:not(:first-child) {
-    margin-left: 0.25em;
-  }
-  #gallery #gallery-container #gallery-controls .controls__dot:hover{
-    opacity: .8;
-  }
-  
-  
-  #gallery:not(:hover) #gallery-container #toggleFullscreenVisual{
-    opacity: 0;
-  }
-  #gallery #gallery-container #toggleFullscreenVisual{
-    display: block;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    
-    cursor: pointer;
-    z-index:4;
-    background-color: white;
-    opacity: .3;
-    transition: opacity 200ms ease;
-  } 
-  #gallery #gallery-container #toggleFullscreenVisual:hover{
-    opacity: .8;
-  }
-  #toggleFullscreen{
-    display: none;
-  }
-  #toggleFullscreen:checked ~ main {
-    height: 100vh;
-    overflow: hidden;
-  }
-  #toggleFullscreen:checked ~ main #gallery #gallery-container {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    height: 100%;
-    padding-bottom: 0px;
-  }
-  #toggleFullscreen:checked ~ main #gallery #toggleFullscreenVisual {
-    opacity: .6;
-    background-color: grey;
-    position: fixed;
-  }
-  #toggleFullscreen:checked ~ main #gallery #gallery-controls {
-    position: fixed;
-  }
-  #toggleFullscreen:checked ~ main #gallery #gallery-controls .controls__dot {
-    opacity: .6;
-    background-color: grey;
-  }
-  
-  
-  main #content {
-    padding: 0px 36px;
-  }
-  main #content p {
-    margin-top: 36px;
-  }
-  
-  
-  
-  body{
-    font-family: sans-serif;
-    margin: 0px;
-    padding: 0px;
-  }
-  main{
-    padding: 0px;
-    margin: 0px;
-    max-width: 900px;
-    margin: auto;
-  }
-  .hidden{
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
+}
+
+/* Controls positioning and visibility fixes */
+#controls {
+  margin: -180px 0 0 0;
+  width: 100%;
+  height: 50px;
+  z-index: 3;
+  position: relative;
+}
+
+#controls label {
+  transition: opacity 0.2s ease-out;
+  display: none;
+  width: 50px;
+  height: 50px;
+  opacity: .4;
+}
+
+#controls label:hover {
+  opacity: 1;
+}
+
+/* Fixed navigation controls for all slides */
+/* Right button */
+#slide1:checked ~ #controls label:nth-child(2),
+#slide2:checked ~ #controls label:nth-child(3),
+#slide3:checked ~ #controls label:nth-child(4),
+#slide4:checked ~ #controls label:nth-child(1) {
+  background: url(https://cdn-icons-png.flaticon.com/512/271/271228.png) no-repeat center;
+  background-size: 30px 30px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* Left button - Fixed selectors */
+#slide1:checked ~ #controls label:nth-last-child(1),
+#slide2:checked ~ #controls label:nth-last-child(4),
+#slide3:checked ~ #controls label:nth-last-child(3),
+#slide4:checked ~ #controls label:nth-last-child(2) {
+  background: url(https://cdn-icons-png.flaticon.com/512/271/271220.png) no-repeat center;
+  background-size: 30px 30px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* Bullets styling */
+#bullets {
+  margin: 150px 0 0;
+  text-align: center;
+}
+
+#bullets label {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: #ccc;
+  margin: 0 10px;
+}
+
+#slide1:checked ~ #bullets label:nth-child(1),
+#slide2:checked ~ #bullets label:nth-child(2),
+#slide3:checked ~ #bullets label:nth-child(3),
+#slide4:checked ~ #bullets label:nth-child(4) {
+  background: #000000;
+}
+
+/* Responsive fixes */
+@media screen and (max-width: 15000px) {
+  #slides {
+      max-width: calc(100% - 140px);
+      margin: 0 auto;}
+}
